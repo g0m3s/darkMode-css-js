@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark/White Mode</title>
+
+    <style>
+
+    @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+        body{
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: black;
+            font-family: 'Montserrat', sans-serif;
+            transition: .3s linear ;
+
+        }
+
+        body.dark {
+
+            background-color: #424242;
+            
+        }
+
+        body.dark p {
+
+            color: white;
+
+        }
+
+        #darkMode{
+
+            height: 300px;
+            width: 300px;
+            border: 1px solid rgb(68, 91, 133);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: rgba(71, 71, 71, 0.376);
+            
+        }
+
+        label {
+
+            font-size: 8pt;
+            color: rgb(68, 91, 133);
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="darkMode" class="dark">
+
+        <input type="checkbox" name="mudar" id="mudar" onclick="mudar()">
+        <label for="mudar">Change Theme</label>
+
+        <p id="currentMode">White Mode</p>
+
+    </div>
+
+    <script>
+
+        function mudar () {
+
+            document.body.classList.toggle('dark')
+
+            if( document.querySelector('#mudar').checked ){
+
+                document.querySelector('#currentMode').innerHTML = 'Dark Mode'
+            
+            }
+
+            else{
+
+                document.querySelector('#currentMode').innerHTML = 'White Mode'
+
+            }
+            
+        }
+
+    </script>
+    
+</body>
+</html>
